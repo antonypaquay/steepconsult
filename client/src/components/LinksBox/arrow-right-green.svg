@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24"
+    aria-labelledby="arrowRightIconTitle arrowRightIconDesc" stroke="#39938E" stroke-width="1.5" stroke-linecap="round"
+    stroke-linejoin="miter" fill="none" color="#39938E">
+    <path d="M15 18l6-6-6-6" />
+    <path d="M3 12h17" />
+    <path stroke-linecap="round" d="M21 12h-1" />
+</svg>

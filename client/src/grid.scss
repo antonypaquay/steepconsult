@@ -1,0 +1,13 @@
+@import'./settings.scss';
+/** Mobile first grid **/
+
+.grid {
+  display: grid !important;
+  grid-template-columns: [full-start] minmax(20px, 1fr) [center-start] repeat(4, [col-start] minmax(20px, 120px) [col-end]) [center-end] minmax(20px, 1fr) [full-end];
+  grid-template-rows: [header-start] 100px [content-start] minmax(100px, auto) [content-end] minmax(100px, auto) [footer-start] minmax(100px, auto);
+  @media (min-width: $lg){
+    grid-template-columns: [full-start] minmax(30px, 1fr) [center-start] repeat(12, [col-start] minmax(20px, 100px) [col-end]) [center-end] minmax(30px, 1fr) [full-end];
+    grid-template-rows: [header-start] 100px [header-end] minmax(100px, auto) [footer-start] 268px [footer-end];
+    height: 100vh;
+  }
+}

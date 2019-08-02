@@ -1,0 +1,299 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+//colors
+$primary-color: #39938e;
+$primary-color2: #3b9e99;
+$primary-color3: #42b1ab;
+$primary-color4: #4cc1bb;
+
+$black-color: #141414;
+$black-color1: #010101;
+$black-color2: #0d0d0d;
+$black-color3: #1e1e1e;
+$black-color4: #242323;
+
+$background: #ffffff;
+
+$lightGrey--color: #f3f5f8;
+
+//fonts
+$spacing: 20px;
+$opacity: 0.7;
+
+// breakpoints
+$sm: 544px;
+$md: 768px;
+$lg: 956px;
+$xl: 1200px;
+
+// swiper
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 956px) {
+    height: 100vh;
+  }
+}
+
+.swiper-wrapper {
+  height: auto;
+  display: inline-block;
+  @media (min-width: 956px) {
+    height: 100vh;
+    display: flex;
+  }
+}
+
+.swiper-slide {
+  height: auto;
+  @media (min-width: 956px) {
+    height: 100vh;
+  }
+}
+
+.swiper-pagination {
+  position: fixed;
+  right: 3.3% !important;
+  .swiper-pagination-bullet {
+    background-color: $background;
+  }
+}
+
+
+
+
+//custom scrollbar
+
+/* width */
+::-webkit-scrollbar {
+  // width: 3px;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $black-color2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color2;
+}
+
+.blend {
+  mix-blend-mode: difference;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  background-color: #000;
+}
+
+section {
+  position: relative;
+}
+
+@keyframes fadeInYo {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInYo {
+  animation-name: fadeInYo;
+}
+
+//fonts level configuration
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700,900&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+span,
+div,
+a,
+p {
+  font-family: "Raleway", Tahoma, Arial;
+}
+
+h1 {
+  font-size: 1.5625rem;
+  font-weight: 900;
+  font-family: "Raleway", Tahoma, Arial;
+}
+
+h2 {
+  font-size: 1.425rem;
+  font-weight: 700;
+  line-height: 1.65rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $primary-color;
+  text-transform: capitalize;
+}
+
+.greyLabel {
+  font-weight: 800;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 0.0513rem;
+  opacity: 0.3;
+}
+
+p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.875rem;
+}
+
+.labelinputregular {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.labeluppercaseregular {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.0313rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.1875rem;
+    letter-spacing: 0.5;
+    line-height: 3.125rem;
+  }
+
+  h2 {
+    font-size: 1.5625rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  .smallbody > p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    opacity: 0.7;
+  }
+}
+
+//
+
+.centerx {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.centery {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.centerxy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//form
+
+.form__submit {
+  margin-top: 40px;
+  border: 0;
+  font-weight: 700;
+  border-radius: 2px;
+  color: white;
+  background-color: $primary-color;
+  outline: none;
+  padding: 22px 40px;
+  cursor: pointer;
+  outline: none;
+  
+}
+
+button {
+  outline: none;
+  border: 0px transparent;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  outline: none;
+  border-radius: 2px;
+  border: 0px transparent;
+}
+
+input[type="name"],
+input[type="email"],
+input[type="url"],
+textarea,
+select {
+  appearance: none;
+  outline: none;
+  border: 0px;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 0.5;
+  color: $black-color;
+  background-color: #f3f5f8;
+  margin-bottom: 20px;
+  &::placeholder {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    letter-spacing: 0.5;
+    color: rgba($black-color, 0.3);
+  }
+}
+
+input[type="name"],
+input[type="email"],
+input[type="url"],
+textarea {
+  border-radius: 2px !important;
+}
+
+select {
+  border-radius: 2px !important;
+}

@@ -1,0 +1,72 @@
+@import "../../settings.scss";
+@import "../../grid.scss";
+
+
+.section__singlecase{
+
+    display: block !important;
+
+    @media (min-width: $lg) {
+      display: grid !important;
+      grid-template-columns: [full-start] minmax(30px, 1fr) [center-start] repeat(12,[col-start] minmax(20px, 100px) [col-end]) [center-end] minmax(30px, 1fr) [full-end];
+      grid-template-rows: [header-start] 100px [header-end] minmax(100px, auto) [footer-start] 268px [footer-end];
+      height: 100vh;
+    }
+
+
+    .grid__content--article {
+        grid-column: 5/11;
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        overflow: hidden;
+    }
+
+
+  .article__wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+
+      img{
+        display: block;
+    max-width: 100%;
+      }
+      
+  }
+  .article__scroll {
+      overflow-y: scroll;
+      box-sizing: content-box;
+      width: 100%;
+      height: 100%;
+      padding-right: 20px;
+  }
+
+
+  /*START: center text in scroll area*/
+    @media (min-width: $lg) {
+      .article__scroll:before {
+          margin-top:20%;
+          content:"";
+          display:block;
+          background-color:red;
+          position: relative;
+          width: 0;
+          height: 0;
+      }
+      .article__scroll:after {
+          margin-top:10%;
+          content:"";
+          display:block;
+          background-color:red;
+          position: relative;
+          width: 0;
+          height: 0;
+      }
+    }
+
+
+  .article__main-title {
+      margin-top: 200px;
+  }
+  
+
+}

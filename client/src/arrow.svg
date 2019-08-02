@@ -1,0 +1,19 @@
+<svg id="arrows" data-name="arrowslist" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 16.9 16.9">
+  <title>Arrows icons list steep</title>
+  <symbol id="right" >
+    <title>Arrow right</title>
+    <polygon data-name="arrowright"  points="16.9 8.5 10.6 3.7 10.6 7.2 0 7.2 0 10.2 10.6 10.2 10.6 13.2 16.9 8.5"/>
+  </symbol>
+  <symbol id="left" >
+    <title>Arrow Left</title>
+    <polygon data-name="arrowleft"  points="0 8.4 6.3 13.2 6.3 9.7 16.9 9.7 16.9 6.7 6.3 6.7 6.3 3.7 0 8.4"/>
+  </symbol>
+  <symbol id="up" >
+    <title>Arrow Up</title>
+    <polygon data-name="arrowup" points="8.5 0 3.7 6.3 7.2 6.3 7.2 16.9 10.2 16.9 10.2 6.3 13.2 6.3 8.5 0"/>
+  </symbol>
+  <symbol id="down" >
+    <title>Arrow Down</title>
+    <polygon data-name="arrowdown" points="8.4 16.9 13.2 10.6 9.7 10.6 9.7 0 6.7 0 6.7 10.6 3.7 10.6 8.4 16.9"/>
+  </symbol>
+</svg>

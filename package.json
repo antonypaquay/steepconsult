@@ -1,0 +1,37 @@
+{
+  "name": "steepconsult",
+  "version": "1.0.0",
+  "description": "Steep Consult - Website 2019 developed by Wod",
+  "main": "index.js",
+  "engines": {
+    "node": "10.16.1",
+    "npm": "6.9.0"
+  },
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node index.js", 
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.positivethinking.company/wod/steep-react.git"
+  },
+  "keywords": [
+    "react",
+    "headless",
+    "cms",
+    "js",
+    "backend"
+  ],
+  "author": "Antony Paquay",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemailer": "^6.3.0"
+  }
+}

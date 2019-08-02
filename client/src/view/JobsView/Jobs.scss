@@ -1,0 +1,272 @@
+@import "../../settings.scss";
+@import "../../grid.scss";
+
+.section__jobs {
+  position: relative;
+  .job__counter {
+    display: none;
+    @media (min-width: $xl) {
+      display: block;
+      background-color: #000;
+      width: calc(50% + 80px);
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+
+      .job__counter__block {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        label {
+          color: $background;
+        }
+        .counter__area {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .counter {
+            width: 40px;
+            height: 40px;
+            border: 3px solid $background;
+            border-radius: 43px;
+            .counter--span {
+              display: block;
+              width: 100%;
+              color: $background;
+              font-weight: 700;
+              line-height: 1.88rem;
+              text-align: center;
+              float: left;
+            }
+          }
+          .counter__value {
+            display: block;
+            color: $background;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.0313rem;
+            line-height: 1rem;
+            margin-left: 20px;
+          }
+        }
+        .spinner__job {
+          display: block;
+          width: 43px;
+          height: 43px;
+          position: relative;
+
+          .spinner__unactive {
+            position: absolute;
+            top: 0;
+            right: 0;
+            stroke: $black-color3;
+          }
+
+          .arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-top: 1px;
+            path {
+              fill: $background;
+            }
+          }
+
+          .spinner__progress {
+            position: absolute;
+            top: 0;
+            right: 0;
+            stroke: $background;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transform: rotate(-90deg);
+            transition: all 1.2s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  .jobs__content {
+    background-color: $background;
+    padding: 100px 0px 50px;
+    .block {
+      width: 92%;
+      max-width: 500px;
+      margin: 0 auto;
+      .greyLabel {
+        display: block;
+        margin-bottom: 40px;
+      }
+      .page__desc {
+        margin-top: 20px;
+        opacity: 0.5;
+      }
+      .links {
+        margin: 40px 0px;
+        .btn {
+          margin-right: 20px;
+        }
+        .btn:first-child {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .jobs__img {
+    width: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .jobs__list {
+    background-color: $black-color2;
+    padding: 50px 0px;
+  }
+
+  .article__scroll {
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+
+    padding-right: 20px;
+    @media (min-width: $lg) {
+      min-height: 100vh;
+    }
+  }
+
+  /*START: center text in scroll area*/
+
+  .article__scroll:after {
+    margin-top: 20%;
+    content: "";
+    display: block;
+    position: relative;
+    width: 0;
+    height: 0;
+  }
+
+  /*END: center text in scroll area*/
+
+  .article__scroll--width-auto {
+    width: auto;
+  }
+
+  .article__main-title {
+    margin-top: 200px;
+  }
+
+  .article__content {
+    margin: 0 auto;
+  }
+
+  .article__content img,
+  .article__content p {
+    margin-top: 20px;
+  }
+
+  .article__content h2,
+  .article__content h3,
+  .article__content h4,
+  .article__content h5,
+  .article__content h6 {
+    margin-top: 30px;
+  }
+
+  .article__title {
+    margin-top: 30px;
+  }
+
+  .article__content--jobs {
+    width: 80%;
+  }
+  .article__wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .job__link {
+    display: block;
+    padding: 30px 0;
+    color: $background;
+    border-bottom: 3px solid rgba(#403c3c, 0.2);
+    transition: all 0.3s ease-out;
+    .job__title {
+      color: $background;
+    }
+    .job__location {
+      display: block;
+      color: #5e5757;
+      font-weight: 600;
+      font-style: italic;
+      font-size: 1.025rem;
+      margin-top: 6px;
+      transition: all 0.3s ease-out;
+    }
+    &:hover {
+      border-bottom: 3px solid rgba($primary-color, 1);
+      .job__location {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .job__list a:last-child .job__link {
+    border-bottom: none;
+  }
+
+  @media (min-width: $xl) {
+    width: 100%;
+
+    height: auto;
+    .jobs__content {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 60vh;
+      padding: 0px;
+      .links {
+        margin: 40px 0px 0px !important;
+        .btn:first-child {
+          margin-bottom: 0px !important;
+        }
+      }
+      .block {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .jobs__img {
+      height: 40vh;
+      width: 50%;
+      position: fixed;
+      left: 0;
+      top: 60vh;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .jobs__list {
+      background-color: $black-color2;
+      padding: 50px 0px;
+      width: 50%;
+      height: auto;
+      float: right;
+      overflow: hidden;
+    }
+  }
+}

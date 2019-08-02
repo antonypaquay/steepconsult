@@ -1,0 +1,98 @@
+@import "../../settings.scss";
+@import "../../grid.scss";
+
+.section__other {
+
+  background-color: $black-color2;
+  
+  .blog__list__oneline {
+    position: relative;
+    padding: 100px 0px;
+    background-color: $black-color2;
+    max-width: 960px;
+    margin: 0 auto;
+    .cards__list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      position: relative;
+      width: 92%;
+      .card {
+        margin: 0px auto 20px;
+        width: 80%;
+        position: relative;
+        overflow: hidden;
+        .card__img {
+          display: block;
+          width: 100%;
+          height: auto;
+          border-radius: 2px;
+          transition: all 0.3s ease-in-out;
+        }
+        .card__title {
+          color: #fff;
+          font-size: 1.125rem;
+          line-height: 1.5rem;
+          font-style: italic;
+          margin-top: 20px;
+        }
+        .card__link {
+          display: block;
+          font-size: 0.875rem;
+          font-weight: 600;
+          margin-top: 10px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          transform: translateX(-100%);
+          transition: all 0.3s ease-in-out;
+          opacity: 0;
+          .card__link__label {
+            display: inline-block;
+            color: $primary-color;
+          }
+          .card__link__arrow {
+            margin-left: 10px;
+            margin-top: 3px;
+            svg {
+              display: inline-block;
+            }
+          }
+        }
+  
+        &:hover {
+          .card__link {
+            transform: translateX(0);
+            opacity: 1;
+          }
+          .card__img {
+            filter: invert(1);
+          }
+        }
+      }
+      @media (min-width: $sm) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .card {
+          width: 47%;
+          max-width: 260px;
+        }
+      }
+      @media (min-width: $lg) {
+        width: 100%;
+        .card {
+          width: 55%;
+        }
+      }
+      @media (min-width: $xl) {
+        .card {
+          width: 45%;
+        }
+      }
+    }
+  }
+  
+}

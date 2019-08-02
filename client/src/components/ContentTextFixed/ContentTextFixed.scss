@@ -1,0 +1,86 @@
+@import "../../settings.scss";
+
+.content__text__fixed {
+  max-width: 500px;
+  width: 92%;
+  margin: 0 auto;
+  padding: 80px 0px;
+  background-color: $background;
+  .content__text__title {
+    margin: 40px auto 10px;
+  }
+  .content__text__paragraph {
+    margin-bottom: 20px;
+    opacity: 0.5;
+  }
+  strong a {
+    color: $primary-color;
+    margin: 20px 0px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .btn {
+    margin-top: 20px;
+  }
+  @media (min-width: $md) {
+    width: 80%;
+    .content__text__title {
+      margin: 40px auto 20px;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  min-width: 140px;
+  max-height: 50px;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 2px;
+  border: 2px solid $primary-color;
+  color: $background;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.5008px;
+  line-height: 1rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: scaleX(1);
+    transition: all 0.2s ease-in-out;
+    z-index: -1;
+  }
+  &:hover {
+    color: $primary-color;
+    &:before {
+      transform: scaleX(0);
+    }
+  }
+}
+
+.btn--inverse {
+  border: 2px solid $black-color;
+  padding: 15px 20px;
+  color: $black-color;
+  &:before {
+    background-color: $black-color;
+    transform: scaleX(0);
+  }
+  &:hover {
+    color: $background;
+    &:before {
+      background-color: $black-color;
+      transform: scaleX(1);
+    }
+  }
+}

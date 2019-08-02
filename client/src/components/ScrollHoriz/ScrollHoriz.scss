@@ -1,0 +1,99 @@
+@import "../../settings.scss";
+
+.scrolldown__horizontal {
+  width: 100%;
+  height: 92px;
+  max-width: 320px;
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  transition: all 0.3s ease-in-out;
+
+  .scrolldown__horizontal__block {
+    display: flex;
+    height: inherit;
+    width: 82%;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+
+    label {
+      font-family: raleway;
+      font-size: 0.75rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.0313rem;
+      color: $background;
+      text-align: right;
+      display: block;
+      margin-right: 20px;
+      transition: all 0.3s linear;
+      opacity: 0;
+    }
+
+    &:hover {
+      label {
+        opacity: 1;
+      }
+    }
+  }
+
+  .spinner {
+    display: block;
+    width: 43px;
+    height: 43px;
+    position: relative;
+
+    .spinner__unactive {
+      position: absolute;
+      top: 0;
+      right: 0;
+      stroke: $background;
+      opacity: 1;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 1px;
+      path {
+        fill: $background;
+      }
+    }
+
+    .spinner__progress {
+      position: absolute;
+      top: 0;
+      right: 0;
+      stroke: $black-color;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      transform: rotate(-90deg);
+      transition: all 0.8s ease-in-out;
+    }
+  }
+
+  &:hover {
+    .scrolldown__horizontal__block .spinner .spinner__progress {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .scrolldown__horizontal__block label {
+      display: none;
+    }
+  }
+
+  @media (max-width: 956px) {
+    .scrolldown__horizontal__block {
+      display: none;
+    }
+  }
+}

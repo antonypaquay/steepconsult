@@ -1,0 +1,130 @@
+@import "../../settings.scss";
+@import "../../grid.scss";
+
+.section__contact {
+  .block__left {
+    background-color: $background;
+    padding-top: 80px;
+    .content__text__fixed .btn {
+      display: none;
+    }
+    .content__text__fixed .wp-block-image img {
+      display: block;
+      width: 200px;
+      margin-top: 20px;
+    }
+    .content__text__fixed .content__text__paragraph p strong a {
+      max-width: 50px;
+    }
+  }
+  .block__right {
+    background-color: $background;
+    .form {
+      width: 92%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+  }
+
+  .bottom__picture {
+    display: block;
+    height: 35%;
+    width: 100%;
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .form__input,
+  .form__select,
+  .form__textarea {
+    font-size: 0.8125rem;
+    display: block;
+    margin-top: 30px;
+    padding: 15px;
+    font-weight: 700;
+    border-radius: 2px;
+    background-color: #f3f5f8;
+    border: 0;
+    border-radius: 2px;
+    width: 100%;
+    max-width: 740px;
+  }
+
+  .btn {
+    align-self: flex-start;
+    background-color: $primary-color;
+    border: 2px solid $primary-color;
+    position: relative;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:before {
+      display: none;
+    }
+    @media (min-width: $lg) {
+      align-self: flex-end;
+    }
+    &:hover {
+      background-color: $black-color;
+      border: 2px solid $black-color;
+      color: $background;
+    }
+  }
+  @media (min-width: $lg) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .block__left,
+    .block__right {
+      display: block;
+      width: 50%;
+    }
+    .block__left {
+      height: 80vh;
+      width: 58%;
+      position: relative;
+      padding-top: 0px;
+      .content__text__fixed {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .block__right {
+      width: 42%;
+      height: 80vh;
+      position: relative;
+      .form {
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        max-width: 340px;
+      }
+    }
+    .bottom__picture {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      border-top-right-radius: 2px;
+      overflow: hidden;
+    }
+  }
+  @media (min-width: 1600px) {
+    .block__right {
+      .form {
+        position: absolute;
+        bottom: 10%;
+        left: 0%;
+        max-width: 340px;
+      }
+    }
+  }
+}

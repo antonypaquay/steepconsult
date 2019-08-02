@@ -1,0 +1,253 @@
+@import "../../settings.scss";
+@import "../../grid.scss";
+
+.section__introduction {
+  position: relative;
+  height: 100vh;
+  .section__introduction__container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .background__full {
+      width: 100%;
+      background-color: $black-color;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($black-color, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      @media (min-width: $lg) {
+        display: none;
+      }
+    }
+    .content {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 92%;
+      .headline {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        z-index: 2;
+        position: relative;
+
+        .launch__btn {
+          background-color: transparent;
+          outline: none;
+          border: none;
+          width: 50px;
+          height: 50px;
+          display: block;
+          position: relative;
+          margin: 0px auto 40px;
+          cursor: pointer;
+          span {
+            display: block;
+            width: 100px;
+            position: absolute;
+            bottom: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+
+          img {
+            width: 50px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: all 0.2s ease-in-out;
+          }
+
+          img:nth-child(2) {
+            opacity: 0.7;
+            transform: translateY(-50%) translateX(-10px) scale(0.8);
+          }
+
+          img:last-child {
+            opacity: 0.4;
+            transform: translateY(-50%) translateX(-20px) scale(0.6);
+          }
+
+          &:hover {
+            img:first-child {
+              transform: translateY(-50%) translateX(10px) scale(0.8);
+              opacity: 0;
+            }
+
+            img:nth-child(2) {
+              transform: translateY(-50%) translateX(0px) scale(1);
+              opacity: 1;
+            }
+
+            img:last-child {
+              transform: translateY(-50%) translateX(-15px) scale(0.6);
+              opacity: 0.6;
+            }
+          }
+        }
+        .headline__content {
+          max-width: 640px;
+          margin: 0 auto;
+          .headline__title {
+            color: $background;
+            max-width: 640px;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            text-align: center;
+          }
+        }
+        .headline__baseline {
+          color: $background;
+          font-size: 0.875rem;
+          line-height: 1rem;
+          letter-spacing: 0.5;
+          position: relative;
+          text-align: center;
+          &:after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 26px;
+            background-color: $background;
+            border-radius: 2px;
+            margin: 15px auto 0px;
+          }
+        }
+        @media (min-width: 321px) {
+          .launch__btn {
+            margin-bottom: 30px;
+          }
+          .headline__content .headline__title {
+            font-size: 1.5625rem;
+            line-height: 1.875rem;
+            font-weight: 900;
+          }
+        }
+        @media (min-width: 768px) {
+          .headline__content .headline__title {
+            font-size: 2.1875rem;
+            font-weight: 900;
+            line-height: 2.875rem;
+          }
+        }
+
+        @media (min-width: 956px) {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          .launch__btn {
+            margin: 0;
+          }
+          .headline__content {
+            .headline__title,
+            .headline__baseline {
+              text-align: left;
+            }
+            .headline__baseline {
+              display: flex;
+              flex-direction: row-reverse;
+              flex-wrap: wrap;
+              max-width: 240px;
+              align-items: center;
+            }
+            .headline__baseline:after {
+              content: "";
+              display: inline-block;
+              height: 3px;
+              width: 46px;
+              background-color: $background;
+              border-radius: 2px;
+              margin: 0px;
+              margin-right: 16px;
+            }
+          }
+          .launch__btn {
+            display: block;
+            margin-left: 70px;
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+    @media (min-width: $lg) {
+      width: 100%;
+
+      z-index: 10;
+      .content {
+        width: 80%;
+        max-width: 1440px;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 0%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        align-self: center;
+        justify-content: space-between;
+        padding-bottom: 100px;
+        .headline {
+          width: 70%;
+          position: relative;
+          left: 30%;
+          .headline__content {
+            max-width: 100% !important;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .mask {
+    display: none;
+    @media (min-width: $lg) {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba($primary-color, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+  }
+
+  #vid {
+    display: none;
+    @media (min-width: $lg) {
+      display: block;
+      position: relative;
+      width: 100vw; /* Could also use width: 100%; */
+      height: 100vh;
+      object-fit: cover;
+      position: absolute; /* Change position to absolute if you don't want it to take up the whole page */
+      left: 0px;
+      top: 0px;
+      z-index: -1;
+      z-index: 1;
+    }
+  }
+  .headline {
+    grid-column: 2/6;
+  }
+}

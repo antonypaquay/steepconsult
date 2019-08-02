@@ -1,0 +1,129 @@
+@import "../../settings.scss";
+
+.blend {
+  mix-blend-mode: difference;
+  transition: all 0.3s ease-in-out;
+}
+
+.top__bar {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9996;
+
+  .top__bar__center {
+    width: 92%;
+    height: inherit;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      display: block;
+      width: 100px;
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        fill: $background;
+      }
+    }
+
+    .burger {
+      width: auto;
+      height: 43px;
+      border-radius: 43px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+
+      .burger__label {
+        color: $background;
+
+        margin-right: 12px;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.0313rem;
+      }
+
+      .burger__el {
+        width: 43px;
+        height: 43px;
+        background-color: $background;
+        border-radius: 43px;
+        position: relative;
+
+        .burger__el__span {
+          width: 16px;
+          height: 9px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          span {
+            background-color: $black-color1;
+            display: block;
+            height: 3px;
+            width: inherit;
+            transform-origin: top left;
+            transition: all 0.3s ease-in-out;
+          }
+
+          span:first-child {
+            margin-bottom: 3px;
+          }
+        }
+      }
+      &:hover,
+      &:active {
+        .burger__el {
+          background-color: $background;
+          .burger__el__span span {
+            background-color: $black-color1;
+          }
+          .burger__el__span span:last-child {
+            transform: scaleX(0.7);
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .top__bar__center {
+      width: 96%;
+      img {
+        width: 26px;
+      }
+    }
+  }
+}
+
+.burger--active {
+  .burger__el {
+    background-color: #ffffff !important;
+  }
+  .burger__el .burger__el__span span:first-child {
+    transform: translate(1px, 9px) rotate(-45deg) scaleX(1);
+    background-color: $black-color3 !important;
+  }
+  .burger__el .burger__el__span span:last-child {
+    transform: translate(3px, -8px) rotate(45deg) scaleX(1);
+    background-color: $black-color3 !important;
+  }
+  &:hover,
+  &:active {
+    .burger__el {
+      .burger__el__span span:last-child {
+        transform: translate(3px, -8px) scaleX(1) rotate(45deg) !important;
+      }
+    }
+  }
+}
